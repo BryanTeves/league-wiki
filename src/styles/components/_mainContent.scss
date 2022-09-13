@@ -6,12 +6,22 @@
   font-size: 3rem;
 
   &-form {
-    padding: 4rem;
     display: grid;
     grid-template-rows: 4rem 8rem;
     grid-template-columns: max-content repeat(4, 1fr);
     justify-content: space-around;
     gap: 8rem 4rem;
+
+    @media only screen and (max-width: $smallest-size) {
+      grid-template-rows: 4rem 3rem 8rem;
+      padding: 0 4rem;
+    }
+  }
+
+  &-label {
+    @media only screen and (max-width: $smallest-size) {
+      grid-column: 2 / -1;
+    }
   }
 
   &-input {
@@ -20,6 +30,10 @@
     border: none;
     border-radius: 1rem;
     background-color: var(--green-white);
+
+    @media only screen and (max-width: $smallest-size) {
+      grid-column: 1 / -1;
+    }
   }
 
   &-btn {
@@ -29,6 +43,10 @@
 
     @media only screen and (max-width: $small-size) {
       grid-column: 1 / -1;
+    }
+
+    @media only screen and (max-width: $smallest-size) {
+      grid-column: 3 / 5;
     }
   }
 

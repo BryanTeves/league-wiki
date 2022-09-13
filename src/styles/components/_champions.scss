@@ -56,6 +56,18 @@
 
   transition: all 1.2s;
 
+  @media only screen and (max-width: $large-size) {
+    grid-template-rows: 25rem 65rem 98rem 80rem 24rem;
+  }
+
+  @media only screen and (max-width: $small-size) {
+    grid-template-rows: 25rem 74rem 98rem 80rem 24rem;
+  }
+
+  @media only screen and (max-width: $smallest-size) {
+    grid-template-rows: 30rem 80rem 115rem 80rem 32rem;
+  }
+
   & h2 {
     letter-spacing: 8px;
     text-shadow: 1px 1px 2rem var(--green);
@@ -68,22 +80,6 @@
   & p {
     text-shadow: 1px 1px 4rem var(--hidden-black);
     color: white;
-  }
-
-  @media only screen and (max-width: $large-size) {
-    grid-template-rows: 25rem 65rem 98rem 80rem 24rem;
-  }
-
-  @media only screen and (max-width: $small-size) {
-    grid-template-rows: 25rem 74rem 98rem 80rem 24rem;
-  }
-
-  @media only screen and (max-width: $smallest-size) {
-    grid-template-rows: 27rem 76rem 110rem 75rem 28rem;
-  }
-
-  @media only screen and (max-width: $smallest-one-size) {
-    grid-template-rows: 30rem 70rem 110rem 70rem 28rem;
   }
 
   &_lore_blurb {
