@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import { useContext, useEffect, useState, useRef } from "react";
 import {
   FaLongArrowAltRight,
@@ -347,6 +347,12 @@ function Champions() {
           <p className="header_champion-div--p">{title}</p>
         </div>
       </header>
+
+      <div className="go-back">
+        <Link to={"/"} className="go-back-link">
+          Back to search
+        </Link>
+      </div>
 
       <main className={`${effect === "" ? "hide" : "main_champion"}`}>
         <div className="main_champion_lore_blurb">

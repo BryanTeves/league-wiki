@@ -365,3 +365,22 @@
     top: 78%;
   }
 }
+
+.go-back {
+  height: 5rem;
+  text-align: center;
+  padding-top: 3rem;
+  padding-right: 6rem;
+  font-size: 1.5rem;
+  background-color: var(--black);
+  color: white;
+  transition: transform 0.4s;
+
+  &:hover &-link {
+    transform: scale(1.5);
+  }
+
+  &-link {
+    display: block;
+  }
+}

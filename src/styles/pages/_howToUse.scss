@@ -18,6 +18,15 @@
       border-radius: 1rem;
       box-shadow: 1px 1px 8rem var(--hidden-black);
       margin-top: 4rem;
+
+      @media only screen and (max-width: $small-size) {
+        width: 60rem;
+        height: 35rem;
+      }
+      @media only screen and (max-width: $smallest-size) {
+        width: 50rem;
+        height: 30rem;
+      }
     }
   }
 }
