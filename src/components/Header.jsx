@@ -13,6 +13,7 @@ function Header() {
               href="https://www.linkedin.com/in/bryan-teves-freitas-6674ba233/"
               target="_blank"
               className="linkedin social"
+              rel="noreferrer"
             >
               <FaLinkedin />{" "}
             </a>
@@ -22,6 +23,7 @@ function Header() {
               href="https://github.com/BryanTeves"
               target="_blank"
               className="github social"
+              rel="noreferrer"
             >
               <FaGithub />{" "}
             </a>
