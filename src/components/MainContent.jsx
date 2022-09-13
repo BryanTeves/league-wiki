@@ -72,7 +72,7 @@ function MainContent() {
     const championTest = await allChampions(search);
 
     // Test if the search result match any league champion
-    if (championTest == undefined) {
+    if (championTest === undefined) {
       championRef.current =
         "The champion you have searched do not exist. Try again!";
 
@@ -95,7 +95,9 @@ function MainContent() {
 
   // Setting the load spinner
   if (load === true) {
-    loadRef.current = <img src={Spinner} className="main_refs-spinner" />;
+    loadRef.current = (
+      <img src={Spinner} className="main_refs-spinner" alt="Loading" />
+    );
   } else {
     loadRef.current = "";
   }

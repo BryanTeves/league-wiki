@@ -12,8 +12,6 @@ export const LeagueProvider = function ({ children }) {
 
     const champion = dataFetched.data[name];
 
-    console.log(champion);
-
     return champion;
   };
 

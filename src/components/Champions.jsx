@@ -1,4 +1,4 @@
-import { useParams, useLocation, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useContext, useEffect, useState, useRef } from "react";
 import {
   FaLongArrowAltRight,
@@ -8,8 +8,6 @@ import {
   FaList,
   FaInfo,
 } from "react-icons/fa";
-
-import Spinner from "../assets/images/spinner/Loading_icon.gif";
 
 import LeagueContext from "../context/LeagueContext";
 
@@ -23,9 +21,6 @@ function Champions() {
 
   // Params (react-router-dom) to get champion info from api
   const params = useParams();
-
-  // Current location to set the useEffect hook
-  const location = useLocation();
 
   // State to save the champion info
   const [champion, setChampion] = useState([]);
@@ -50,7 +45,7 @@ function Champions() {
     };
 
     fetchData();
-  }, [location]);
+  }, [championName, params.champion]);
 
   // Timeout to load the page. If the page is not loaded in 3 seconds, the user will be redirecrted to notfound page
   setTimeout(() => {
@@ -83,9 +78,9 @@ function Champions() {
     allytips,
     blurb,
     enemytips,
-    id,
+
     info,
-    key,
+
     lore,
     name,
     partype,
@@ -304,8 +299,7 @@ function Champions() {
     if (sum > rightSkin) {
       return rightSkin, rightName;
     } else {
-      return (
-        (carouselSkin.current.scrollLeft -= sum + 100),
+      return (carouselSkin.current.scrollLeft -= sum + 100)(
         (carouselName.current.scrollTop -= sum + 100)
       );
     }
