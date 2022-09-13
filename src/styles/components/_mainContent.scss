@@ -6,6 +6,7 @@
   font-size: 3rem;
 
   &-form {
+    padding: 4rem;
     display: grid;
     grid-template-rows: 4rem 8rem;
     grid-template-columns: max-content repeat(4, 1fr);
