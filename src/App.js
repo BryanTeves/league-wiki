@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+// Components
+
+// Pages
+import ChampionPage from "./pages/ChampionPage";
+import HowToUse from "./pages/HowToUse";
+import MainPage from "./pages/MainPage";
+import NotFound from "./pages/NotFound";
+
+// Context
+import { LeagueProvider } from "./context/LeagueContext";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <LeagueProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/how-to-use" element={<HowToUse />} />
+          <Route path="/champion/:champion" element={<ChampionPage />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
+    </LeagueProvider>
   );
 }
 

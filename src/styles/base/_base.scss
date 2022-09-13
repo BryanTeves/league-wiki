@@ -1,0 +1,60 @@
+$large-size: 68.75em; // 1100px
+$big-size: 50em; // 800px
+$small-size: 37.5em; // 600px
+$smallest-size: 31.25em; // 500px
+$smallest-one-size: 25em; // 400px
+
+:root {
+  --gray: #8b898b;
+  --gray-white: #f3f3f3;
+  --black: #000000;
+  --white: #ffffff;
+  --wheat: wheat;
+  --green: green;
+
+  --hidden-white: rgba(255, 255, 255, 0.5);
+  --hidden-black: rgba(0, 0, 0, 0.8);
+
+  --green-white: rgba(14, 75, 75, 0.3);
+
+  --linkedin: #007bb5;
+  --github: rgb(43, 49, 55);
+
+  --r-1: 1rem;
+}
+
+@mixin rgba($rem, $number) {
+  box-shadow: 1px 1px $rem rgba(0, 0, 0, $number);
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+:link {
+  text-decoration: none;
+  color: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+html {
+  font-size: 62.5%;
+
+  @media only screen and (max-width: $large-size) {
+    font-size: 50%;
+  }
+
+  @media only screen and (max-width: $big-size) {
+    font-size: 35%;
+  }
+
+  font-family: "Roboto Mono", monospace;
+}

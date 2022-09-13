@@ -1,0 +1,50 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  margin-top: 2rem;
+
+  &_h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1rem;
+    text-align: center;
+  }
+
+  &_ul {
+    &-div {
+      width: 5rem;
+      font-size: 2.8rem;
+      text-align: end;
+      width: 100%;
+    }
+
+    &-list {
+      list-style: none;
+      display: flex;
+      justify-content: end;
+      padding: 4rem;
+
+      &-item {
+        margin-right: 4rem;
+
+        transition: all 0.2s;
+
+        &:hover {
+          transform: scale(1.2);
+        }
+        &:not(:last-child) {
+          margin-bottom: 1.9rem;
+        }
+      }
+    }
+  }
+}
+
+.social {
+  font-size: 2.2rem;
+  padding: 1rem;
+  margin-right: 2rem;
+  border-radius: 20%;
+}

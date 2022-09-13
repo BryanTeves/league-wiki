@@ -1,0 +1,51 @@
+.hide {
+  opacity: 0;
+  transition: all 0.8s;
+}
+
+.arrow {
+  font-size: 3rem;
+  width: 2rem;
+  color: var(--white);
+  transition: all 0.2s;
+  font-family: inherit;
+}
+
+.center {
+  align-self: center;
+  justify-self: center;
+}
+
+.none {
+  display: none;
+}
+
+.default {
+  cursor: default;
+}
+
+.linkedin {
+  background-color: var(--linkedin);
+  color: var(--white);
+}
+
+.github {
+  background-color: var(--github);
+  color: var(--white);
+}
+
+@mixin border {
+  &::after {
+    content: "";
+    display: block;
+    border: 1px solid var(--black);
+    height: 0px;
+    width: 90vw;
+    margin: auto;
+    margin-top: 2.5rem;
+  }
+}
+
+.margin-top-2 {
+  margin-top: 2rem;
+}

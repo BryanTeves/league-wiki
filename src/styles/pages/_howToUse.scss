@@ -1,0 +1,23 @@
+.how_to_use {
+  padding: 6rem;
+  &-img {
+    margin: auto;
+    width: 80vw;
+
+    text-align: center;
+
+    &:not(:last-child) {
+      margin-bottom: 4rem;
+    }
+
+    &-1,
+    &-2,
+    &-3 {
+      height: 40rem;
+      width: 80rem;
+      border-radius: 1rem;
+      box-shadow: 1px 1px 8rem var(--hidden-black);
+      margin-top: 4rem;
+    }
+  }
+}

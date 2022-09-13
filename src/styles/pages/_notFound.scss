@@ -1,0 +1,29 @@
+.notfound_ {
+  &header {
+    background-color: var(--gray);
+    padding: 6rem;
+  }
+
+  &main {
+    padding: 6rem;
+    margin: 15rem;
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  &link {
+    width: max-content;
+    margin: 8rem auto;
+    transition: all 0.2s;
+
+    &::after {
+      content: "";
+      display: block;
+      border: 1px solid var(--black);
+    }
+
+    &:hover {
+      transform: scale(1.3);
+    }
+  }
+}

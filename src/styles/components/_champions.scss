@@ -1,0 +1,371 @@
+.header_champion {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  z-index: 10;
+  background-size: cover;
+  background-position: center top;
+
+  &-div {
+    padding: 2rem;
+    background-color: var(--hidden-white);
+    transition: all 0.2s;
+    border-radius: 10px;
+
+    &:hover .arrow {
+      transform: scaleX(1.4);
+    }
+
+    &:hover {
+      cursor: pointer;
+      box-shadow: 1px 1px 8rem var(--hidden-black);
+    }
+    &--h1 {
+      font-size: 4rem;
+      text-align: center;
+      text-transform: uppercase;
+    }
+    &--p {
+      text-align: center;
+      font-size: 2.2rem;
+      text-transform: lowercase;
+
+      &::before {
+        content: "";
+        display: block;
+        border-bottom: 2px solid var(--hidden-white);
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
+.main_champion {
+  display: grid;
+  grid-template-rows: 20rem 55rem 100rem 95rem 20rem;
+  text-align: center;
+  font-size: 1.2rem;
+
+  background-image: url("https://images.contentstack.io/v3/assets/blt731acb42bb3d1659/bltc28d43095579c8b5/5d87c24e8d8a3163705e3070/summonersrift.jpg");
+
+  background-position: center;
+  background-size: contain;
+
+  transition: all 1.2s;
+
+  & h2 {
+    letter-spacing: 8px;
+    text-shadow: 1px 1px 2rem var(--green);
+    background-image: linear-gradient(120deg, var(--white), var(--black));
+    background-clip: text;
+    color: transparent;
+    font-size: 2rem;
+  }
+
+  & p {
+    text-shadow: 1px 1px 4rem var(--hidden-black);
+    color: white;
+  }
+
+  @media only screen and (max-width: $large-size) {
+    grid-template-rows: 25rem 65rem 98rem 80rem 24rem;
+  }
+
+  @media only screen and (max-width: $small-size) {
+    grid-template-rows: 25rem 74rem 98rem 80rem 24rem;
+  }
+
+  @media only screen and (max-width: $smallest-size) {
+    grid-template-rows: 27rem 76rem 110rem 75rem 28rem;
+  }
+
+  @media only screen and (max-width: $smallest-one-size) {
+    grid-template-rows: 30rem 70rem 110rem 70rem 28rem;
+  }
+
+  &_lore_blurb {
+    padding: 2rem 6rem;
+
+    display: grid;
+    grid-gap: 1rem;
+    width: 88.3vw;
+
+    @media only screen and (max-width: $small-size) {
+      padding: 2rem 6rem 2rem 2rem;
+    }
+
+    @include border();
+  }
+
+  &_infos {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(30rem, 1fr));
+    grid-gap: var(--r-1);
+    padding: 4rem;
+    margin-right: 5rem;
+    align-content: center;
+    margin-bottom: 2rem;
+    position: relative;
+
+    @include border();
+
+    &::after {
+      margin-left: 3rem;
+
+      @media only screen and (max-width: $small-size) {
+        margin-left: -1rem;
+      }
+    }
+
+    @media only screen and (max-width: $small-size) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    & h2 {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &_skills {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    grid-gap: 5rem;
+    width: 96.5vw;
+
+    & h2 {
+      margin-bottom: 1rem;
+    }
+
+    &-passive,
+    &-skill {
+      padding: var(--r-1);
+    }
+
+    @include border();
+  }
+
+  &_skins {
+    display: grid;
+    grid-template-rows: 75px 1fr;
+    margin-top: 4rem;
+    width: 96.6vw;
+
+    position: relative;
+
+    &-render {
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      width: 69.5%;
+      height: 94%;
+      margin: auto;
+      border-radius: 2rem;
+      box-shadow: 1px 1px 8rem var(--hidden-black);
+      transition: all 1s;
+
+      &:hover {
+        box-shadow: 1px 1px 12rem var(--hidden-black);
+      }
+
+      @media only screen and (max-width: $small-size) {
+        width: 69%;
+        height: 80%;
+      }
+    }
+
+    &-name {
+      /* These styles are from the carousel name 
+      PS: You need to make the height from this div, 1rem above from the h2. If made in other way, the change 
+      from the carousel will trigger a weird effect, making a conflict in the names*/
+      display: grid;
+      grid-gap: 5rem;
+      overflow: hidden;
+      position: absolute;
+      top: 20%;
+      right: 70%;
+      transform: translate(30%);
+
+      height: 15rem; // 15 - 1rem above the h2
+      width: 22rem;
+      font-size: 1.8rem;
+      padding: 2rem;
+
+      margin: auto;
+
+      & h2 {
+        color: var(--wheat);
+      }
+
+      @media only screen and (max-width: $large-size) {
+        top: 28%;
+        transform: translate(40%);
+      }
+
+      @media only screen and (max-width: $small-size) {
+        right: 65%;
+      }
+
+      @media only screen and (max-width: $smallest-size) {
+        top: 33%;
+        right: 60%;
+      }
+
+      @media only screen and (max-width: $smallest-one-size) {
+        top: 10%;
+        right: 45%;
+      }
+
+      & h2 {
+        display: block;
+        height: 14rem; // 14 - 1rem below the div
+        width: 22rem;
+      }
+    }
+  }
+
+  &_tips {
+    display: grid;
+    grid-gap: var(--r-1);
+    padding: 0 6rem;
+    width: 88.3vw;
+    margin-bottom: 2rem;
+
+    @media only screen and (max-width: $small-size) {
+      padding: 2rem 6rem 2rem 2rem;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      border: 1px solid var(--black);
+      height: 0px;
+      margin-bottom: 1.5rem;
+      width: 90vw;
+      margin: auto;
+    }
+  }
+}
+
+.champion_skins {
+  &-h2 {
+    position: absolute;
+  }
+
+  &-img {
+    width: 100%; // 645px 64.5rem
+    height: 100%; // 380px 38rem
+  }
+}
+
+.carousel-btn {
+  position: absolute;
+  color: var(--white);
+  height: 10rem;
+  width: 3rem;
+  transition: all 0.8s;
+
+  &:hover {
+    transform: scaleX(1.4);
+  }
+}
+
+.btn-right {
+  right: 30rem;
+
+  @media only screen and (max-width: $large-size) {
+    right: 24rem;
+  }
+
+  @media only screen and (max-width: $smallest-size) {
+    right: 20rem;
+  }
+
+  @media only screen and (max-width: $smallest-one-size) {
+    right: 15rem;
+  }
+}
+
+.btn-left {
+  left: 30rem;
+
+  @media only screen and (max-width: $large-size) {
+    left: 24rem;
+  }
+
+  @media only screen and (max-width: $smallest-size) {
+    left: 20rem;
+  }
+
+  @media only screen and (max-width: $smallest-one-size) {
+    left: 15rem;
+  }
+}
+
+.fa {
+  position: absolute;
+  top: 13.5%;
+  width: 2rem;
+  height: 2rem;
+
+  @media only screen and (max-width: $large-size) {
+    top: 18%;
+  }
+
+  @media only screen and (max-width: $big-size) {
+    top: 12%;
+  }
+}
+
+.info {
+  left: 30%;
+
+  @media only screen and (max-width: $large-size) {
+    left: 32%;
+  }
+
+  @media only screen and (max-width: $big-size) {
+    left: 17%;
+  }
+
+  @media only screen and (max-width: $small-size) {
+    left: 80%;
+    top: 10%;
+  }
+}
+
+.list {
+  left: 64%;
+
+  @media only screen and (max-width: $large-size) {
+    left: 66%;
+  }
+
+  @media only screen and (max-width: $big-size) {
+    left: 49%;
+  }
+
+  @media only screen and (max-width: $small-size) {
+    left: 80%;
+    top: 26.5%;
+  }
+}
+
+.tags {
+  right: 11%;
+
+  @media only screen and (max-width: $large-size) {
+    right: 9%;
+  }
+
+  @media only screen and (max-width: $big-size) {
+    right: 18%;
+  }
+
+  @media only screen and (max-width: $small-size) {
+    top: 78%;
+  }
+}

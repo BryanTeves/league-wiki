@@ -1,0 +1,21 @@
+.footer {
+  font-size: 2.4rem;
+  text-transform: uppercase;
+  padding: 2rem;
+  background-color: var(--black);
+  text-align: center;
+  color: var(--white);
+
+  &_link {
+    color: var(--gray);
+    display: inline-block;
+    margin-bottom: 0.5rem;
+
+    transition: all 0.2s linear;
+
+    &:hover {
+      transform: scale(1.1) translateY(-2px);
+      color: var(--white);
+    }
+  }
+}
