@@ -93,7 +93,7 @@
   & h2 {
     letter-spacing: 8px;
     text-shadow: 1px 1px 2rem var(--green);
-    background-image: linear-gradient(120deg, var(--white), var(--black));
+    background-image: linear-gradient(120deg, var(--wheat), var(--black));
     background-clip: text;
     color: transparent;
     font-size: 2rem;
@@ -101,7 +101,7 @@
 
   & p {
     text-shadow: 1px 1px 4rem var(--hidden-black);
-    color: white;
+    color: var(--white);
   }
 
   &_lore_blurb {

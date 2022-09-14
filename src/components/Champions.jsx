@@ -193,9 +193,10 @@ function Champions() {
 
         [
           `Resource: ${
-            // {{ cost }} and {{ abilityresourcename }} are some issues from the api, that's solve the problem
+            // Fixing some text issues from the API
             spell.resource === `{{ cost }} {{ abilityresourcename }}` ||
-            spell.resource === `{{ cost }} Mana`
+            spell.resource === `{{ cost }} Mana` ||
+            ` {{ basemanacost }} Mana`
               ? partype
               : spell.resource
           }`,
@@ -203,8 +204,9 @@ function Champions() {
 
         [
           `CostType: ${
-            // {{ abilityresourcename }} is another api issue
-            spell.costType === ` {{ abilityresourcename }}`
+            // More API issues
+            spell.costType === ` {{ abilityresourcename }}` ||
+            ` (+{{ percentmanacostpersecond*100 }}% Max Mana per second)`
               ? partype
               : spell.costType
           }`,
