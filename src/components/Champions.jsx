@@ -219,7 +219,7 @@ function Champions() {
       return (
         <img
           key={i + 50}
-          src={backgroundImage(params.champion, skin.num)}
+          src={backgroundImage(params.champion, "splash", skin.num)}
           alt={`Skin ${skin.name}`}
           className="champion_skins-img"
           id={i}
@@ -299,7 +299,8 @@ function Champions() {
     if (sum > rightSkin) {
       return rightSkin, rightName;
     } else {
-      return (carouselSkin.current.scrollLeft -= sum + 100)(
+      return (
+        (carouselSkin.current.scrollLeft -= sum + 100),
         (carouselName.current.scrollTop -= sum + 100)
       );
     }
@@ -328,6 +329,8 @@ function Champions() {
     }
   };
 
+  const phoneSize = window.matchMedia("(max-width: 50em)").matches; // 50em == 800px
+
   return (
     <>
       <div className="champion_load">{loadRef.current}</div>
@@ -335,7 +338,12 @@ function Champions() {
       <header
         className={`${effect === "" ? "header_champion" : "none"}`}
         // Rendering the background image from the champion images API
-        style={{ backgroundImage: `url(${backgroundImage(params.champion)})` }}
+        style={{
+          backgroundImage:
+            phoneSize === true
+              ? `url(${backgroundImage(params.champion, "loading")})`
+              : `url(${backgroundImage(params.champion, "splash")})`,
+        }}
       >
         <div
           className={`${effect === "" ? "header_champion-div" : "default"}`}
@@ -358,13 +366,16 @@ function Champions() {
         <div className="main_champion_lore_blurb">
           {/* Render champion LORE */}
 
-          <h2>Lore</h2>
-          <p>{loreRef.current}</p>
+          <div className="main_champion_lore_blurb-lore">
+            <h2>Lore</h2>
+            <p>{loreRef.current}</p>
+          </div>
 
           {/* Render champion BLURB */}
-
-          <h2 className="margin-top-2">Blurb</h2>
-          <p>{blurbRef.current}</p>
+          <div className="main_champion_lore_blurb-blurb">
+            <h2 className="margin-top-2">Blurb</h2>
+            <p>{blurbRef.current}</p>
+          </div>
         </div>
 
         {/* Render champion INFOS */}
@@ -476,12 +487,16 @@ function Champions() {
 
         <div className="main_champion_tips">
           {/* Render champion ENEMY TIPS */}
-          <h2>Enemy Tips</h2>
-          <p>{enemyRef.current}</p>
+          <div className="main_champion_tips-enemy">
+            <h2>Enemy Tips</h2>
+            <p>{enemyRef.current}</p>
+          </div>
 
           {/* Render champion ALLY TIPS */}
-          <h2>Ally Tips</h2>
-          <p>{allyRef.current}</p>
+          <div className="main_champion_tips-ally">
+            <h2>Ally Tips</h2>
+            <p>{allyRef.current}</p>
+          </div>
         </div>
       </main>
 

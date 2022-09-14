@@ -76,12 +76,13 @@
 .main_refs {
   height: 10rem;
   display: block;
+  margin: auto;
   width: 80vw;
   text-align: center;
   padding: 4rem;
 
   &-spinner {
-    width: 20%;
+    width: 10%;
     height: 100%;
   }
 }

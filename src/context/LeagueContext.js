@@ -23,8 +23,8 @@ export const LeagueProvider = function ({ children }) {
   };
 
   // Get the background champion image
-  const backgroundImage = (name, num = "0") => {
-    const image = `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${name}_${num}.jpg`;
+  const backgroundImage = (name, type = "splash", num = "0") => {
+    const image = `https://ddragon.leagueoflegends.com/cdn/img/champion/${type}/${name}_${num}.jpg`;
 
     return image;
   };
@@ -38,8 +38,6 @@ export const LeagueProvider = function ({ children }) {
 
     return dataFetched.data[name];
   };
-
-  allChampions();
 
   return (
     <LeagueContext.Provider

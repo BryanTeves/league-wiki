@@ -129,11 +129,10 @@ function MainContent() {
           }
           onClick={handleClick}
         />
-
-        <div className="main_refs">
-          <h2 className="main_refs-h2">{championRef.current}</h2>
-          {loadRef.current}
-        </div>
+      </div>
+      <div className="main_refs">
+        <h2 className="main_refs-h2">{championRef.current}</h2>
+        {loadRef.current}
       </div>
     </main>
   );
